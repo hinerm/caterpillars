@@ -1,7 +1,6 @@
 ---
 layout: species
 title: "Euclystis guerini Guenee"
-date: 2024-02-04 18:42:00 -0600
 categories: jekyll species
 ---
 

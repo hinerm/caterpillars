@@ -1,7 +1,6 @@
 ---
 layout: species
 title: "Entheus matho"
-date: 2024-02-04 18:44:00 -0600
 categories: jekyll species
 ---
 

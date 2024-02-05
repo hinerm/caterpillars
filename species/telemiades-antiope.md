@@ -1,7 +1,6 @@
 ---
 layout: species
 title: "Telemiades antiope"
-date: 2024-02-04 18:04:00 -0600
 categories: jekyll species
 ---
 
