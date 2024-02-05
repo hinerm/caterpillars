@@ -1,0 +1,10 @@
+Insecta
+  Lepidoptera
+    Noctuoidea
+      Erebinae
+        Catocalini
+          Euclystis
+    Hesperioidea
+      Hesperiidae
+        Telemiades
+        Entheus
