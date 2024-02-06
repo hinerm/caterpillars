@@ -1,5 +1,6 @@
 ---
 layout: species
+taxonomy: "Euclystis:Catocalini:Erebinae:Noctuoidea:Lepidoptera:Insecta"
 title: "Euclystis guerini Guenee"
 categories: jekyll species
 ---

@@ -15,6 +15,10 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  <section id="left-column" class="sidebar">
+    {% include layout/menu.html %}
+  </section>
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
