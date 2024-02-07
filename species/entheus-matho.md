@@ -1,6 +1,7 @@
 ---
 layout: species
 taxonomy: "Entheus:Hesperiidae:Hesperioidea:Lepidoptera:Insecta"
+genus: "Entheus"
 title: "Entheus matho"
 categories: jekyll species
 ---
