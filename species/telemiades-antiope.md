@@ -8,8 +8,4 @@ categories: jekyll species
 
 Host plant: Inga sp.
 
-
-![Adult top](/caterpillars/docs/assests/cats/HES30/1.jpg)
-![Adult bottom](/caterpillars/docs/assests/cats/HES30/2.jpg)
-![Larva top](/caterpillars/docs/assests/cats/HES30/3.jpg)
-![Larva side](/caterpillars/docs/assests/cats/HES30/4.jpg)
+{% include image-gallery.html folder="/docs/assets/cats/HES30" %}

@@ -1,0 +1,7 @@
+markup_presets:
+  thumbnail:
+    markup: img
+    widths: [150, 190, 300]
+    fallback_width: 50
+    fallback_format: original
+    formats: [webp, original]
