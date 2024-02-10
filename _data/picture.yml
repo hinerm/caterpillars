@@ -5,3 +5,5 @@ markup_presets:
     fallback_width: 50
     fallback_format: original
     formats: [webp, original]
+    link_source: true
+    nomarkdown: false
