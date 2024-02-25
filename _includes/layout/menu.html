@@ -2,29 +2,38 @@
   <div class="menu">
     <h3>Taxonomy</h3>
     <ul>
-      {% include menu/section.html title="Insecta" open="True" %}
-        {% include menu/section.html title="Lepidoptera" border="4" %}
-          {%include menu/section.html title="Noctuoidea" border="2.5" %}
-            {%include menu/section.html title="Erebinae" border="2" %}
-              {%include menu/section.html title="Catocalini" border="1.5" %}
-                {%include menu/section.html title="Euclystis" genus="Euclystis" border="1" %}
-                <li><a href="/caterpillars/species/euclystis-guerini-guenee.html">Euclystis guerini Guenee</a></li>
-                {%include menu/section-end.html %}
-              {%include menu/section-end.html %}
-            {%include menu/section-end.html %}
-          {%include menu/section-end.html %}
-          {%include menu/section.html title="Hesperioidea" border="2.5" %}
-            {%include menu/section.html title="Hesperiidae" border="2" %}
-              {%include menu/section.html title="Telemiades" genus="Telemiades" border="1" %}
-                <li><a href="/caterpillars/species/telemiades-nr-antiope.html">Telemiades nr. Antiope</a></li>
-              {%include menu/section-end.html %}
-              {%include menu/section.html title="Entheus" genus="Entheus" border="1" %}
-                <li><a href="/caterpillars/species/entheus-matho.html">Entheus Matho</a></li>
+    {% include menu/section.html title="Insecta" open="True" %}
+      {% include menu/section.html title="Lepidoptera" border="5" taxon="Lepidoptera" %}
+        {% include menu/section.html title="Noctuoidea" border="4" taxon="Noctuoidea" %}
+          {% include menu/section.html title="Erebinae" border="3" taxon="Erebinae" %}
+            {% include menu/section.html title="Catocalini" border="2" taxon="Catocalini" %}
+              {% include menu/section.html title="Euclystis" border="1" taxon="Euclystis" %}
+                {% assign genus = site.pages | where:'genus','Euclystis' %}
+                {%- for page in genus -%}
+                <li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+                {%- endfor -%}
               {%include menu/section-end.html %}
             {%include menu/section-end.html %}
           {%include menu/section-end.html %}
         {%include menu/section-end.html %}
+        {% include menu/section.html title="Hesperioidea" border="4" taxon="Hesperioidea" %}
+          {% include menu/section.html title="Hesperiidae" border="3" taxon="Hesperiidae" %}
+            {% include menu/section.html title="Telemiades" border="2" taxon="Telemiades" %}
+              {% assign genus = site.pages | where:'genus','Telemiades' %}
+              {%- for page in genus -%}
+              <li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+              {%- endfor -%}
+            {%include menu/section-end.html %}
+            {% include menu/section.html title="Entheus" border="2" taxon="Entheus" %}
+              {% assign genus = site.pages | where:'genus','Entheus' %}
+              {%- for page in genus -%}
+              <li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+              {%- endfor -%}
+            {%include menu/section-end.html %}
+          {%include menu/section-end.html %}
+        {%include menu/section-end.html %}
       {%include menu/section-end.html %}
+    {%include menu/section-end.html %}
     </ul>
   </div>
 {%- endcapture -%}

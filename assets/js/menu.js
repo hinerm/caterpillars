@@ -19,8 +19,8 @@ function openAllMenuFromLeaf(id) {
 // - which is used as the ID to open the menu structure
 function openMenuHierarchy() {
   var title = document.title;
-  var genus = title.split(/(\s+)/)[0];
-  openAllMenuFromLeaf(genus);
+  var taxon = title.split(/(\s+)/)[0];
+  openAllMenuFromLeaf(taxon);
 }
 
 Window.onload = openMenuHierarchy();
