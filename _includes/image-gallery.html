@@ -13,7 +13,7 @@
       {% if file.extname == '.jpg' or file.extname == '.jpeg' or file.extname == '.JPG' or file.extname == '.JPEG' %}
         {% assign filenameparts = file.path | split: "/" %}
         {% assign filename = filenameparts | last | replace: file.extname,"" %}
-        {% picture thumbnail {{file.path}} 1:1 --alt {{page.title}} %}
+        {% picture thumbnail {{file.path}} 1:1 --alt {{page.title}} --img width="200px" %}
       {% endif %}
     {% endif %}
   {% endfor %}</ul>
