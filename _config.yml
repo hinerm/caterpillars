@@ -63,3 +63,4 @@ exclude:
 #   - vendor/ruby/
   - cats.csv
   - taxonomy.txt
+  - scripts/
