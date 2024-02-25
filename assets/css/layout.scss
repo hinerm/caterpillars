@@ -8,6 +8,14 @@ $sidebarWidth: 350px;
 $sidebarMargin: 12px;
 $sidebarPadding: 10px;
 
+/* --------------------------------- WRAPPER --------------------------------- */
+
+@media screen {
+  .wrapper {
+    max-width: 90vw;
+  }
+}
+
 /* --------------------------------- SIDEBAR --------------------------------- */
 
 .sidebar {
