@@ -1,6 +1,5 @@
 ---
 layout: species
-taxonomy: "Telemiades:Hesperiidae:Hesperioidea:Lepidoptera:Insecta"
 genus: "Telemiades"
 title: "Telemiades antiope"
 categories: jekyll species

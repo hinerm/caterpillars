@@ -1,21 +1,12 @@
 <li>
-{%- assign tokens = {{page.taxonomy}} | split: ":" -%}
-{%- assign open = false -%}
-{%- for token in tokens -%}
-  {%- if token == include.title -%}
-    {%- assign open = true -%}
-  {%- endif -%}
-{%- endfor -%}
-{%- if open -%}
+{%- if {{include.open}} -%}
 <details open>
+{%- elsif {{include.genus}} -%}
+<details id="{{include.genus}}">
 {%- else -%}
 <details>
 {%- endif -%}
-{%- if include.link -%}
-<summary><a href="{{include.link}}">{{include.title}}</a></summary>
-{%- else -%}
 <summary>{{include.title}}</summary>
-{%- endif -%}
 <ul style="border-left: {{include.border}}px solid gray;">
 
 {%- comment -%}
