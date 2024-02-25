@@ -108,14 +108,14 @@ $sidebarPadding: 10px;
 }
 
 .menu details > summary:after {
-  content: "▹";
-  font-size: 10px;
+  content: "▷";
+  font-size: 12px;
   position: absolute;
 }
 
 .menu details[open] > summary:after {
-  content: "▿";
-  font-size: 11px;
+  content: "▼";
+  font-size: 12.5px;
 }
 
 .menu a.current-page {
