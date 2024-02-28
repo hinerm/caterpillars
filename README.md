@@ -121,3 +121,7 @@ base_directory
 |   |-- css
 |   |-- |-- lightbox.css
 ```
+
+## Future Directions
+
+See the [project board](https://github.com/users/hinerm/projects/3/views/1)
