@@ -6,7 +6,6 @@ layout: default
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
-  {% assign species = site.pages | where_exp: 'page', 'page.title' %}
 
   {{ content }}
 
@@ -21,6 +20,7 @@ layout: default
 
   <h2 class="post-list-heading">Species</h2>
   <ul class="post-list">
+  {% assign species = site.pages | where: 'layout','species' %}
     {%- for page in species -%}
       {%- if page.categories contains 'species' -%}
       <li>
