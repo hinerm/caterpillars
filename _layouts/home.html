@@ -18,18 +18,16 @@ layout: default
   <p>For associated files and generation instructions, see the <a href="https://github.com/hinerm/caterpillars/">GitHub repository</a>.</p>
   <p>Data obtained from Dyer, L.A. and G.L. Gentry. 2002. Caterpillars and parasitoids of a tropical lowland wet forest. http://www.caterpillars.org. Accessed: 04-Feb-2024.</p>
 
-  <h2 class="post-list-heading">Species</h2>
+  <h2 class="post-list-heading">Current Individual Pages</h2>
   <ul class="post-list">
   {% assign species = site.pages | where: 'layout','species' %}
     {%- for page in species -%}
-      {%- if page.categories contains 'species' -%}
       <li>
         <h3>
           <a class="post-link" href="{{ page.url | relative_url }}">
             {{ page.title | escape }}
           </a>
         </h3>
-      {%- endif -%}
     {%- endfor -%}
   </ul>
 
