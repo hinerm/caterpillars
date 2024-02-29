@@ -39,7 +39,7 @@ $ scripts/make_species.sh docs/assets/cats cats.csv
 ### Site menu
 
 The `make_menu.sh` script takes one input:
-1. A file with the desired taxonomy structure, with each taxonomic level indented by an additional space, with genus as the leaves
+1. A file with the desired taxonomy structure, with each taxonomic level indented by an additional space, with individuals as the leaves
 
 Sample usage:
 
@@ -60,7 +60,9 @@ Each species page contains [front matter](https://jekyllrb.com/docs/front-matter
 ---
 layout: species
 genus: "Entheus"
-title: "Entheus matho"
+ID: "HES9"
+species: "Entheus matho"
+title: "Entheus matho - HES9"
 categories: jekyll species
 ---
 ```
@@ -70,19 +72,24 @@ This allows the pages to be categorized and titled appropriately.
 ### Menu features
 
 Each genus section of the menus use this liquid selection logic to collect all
-individual pages of that genus and create menu links.
+individual pages of that genus, determine the necessary species menus to create,
+and within those and create menu entries for each individual.
 
 ```
-{% assign genus = site.pages | where:'genus','Entheus' %}
-{%- for page in genus -%}
-<li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+{% assign genus = site.pages | where:'genus','Telemiades' | group_by:'species' | sort:'name' %}
+{%- for species in genus -%}
+  {% include menu/section.html title=species.name border=1 taxon=species.name %}
+  {% assign speciesByID = species.items | sort:'ID' %}
+  {%- for individual in speciesByID -%}
+  <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
+  {%- endfor -%}
+  {% include menu/section-end.html %}
 {%- endfor -%}
 ```
 
 Menu categories are created via the `menu/section.html` includes. A `border`
 value allows adding a border to the left of the menu. The `taxon` value is
-currently only used for genera right now, such that the genus menu sections
-(and all parents) are opened when a page of that genus is visited.
+used to provide target IDs to be opened by javascript on page load.
 
 ```
 {% include menu/section.html title="Entheus" border="2" taxon="Entheus" %}
