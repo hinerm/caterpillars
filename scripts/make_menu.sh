@@ -19,7 +19,7 @@ print_genus_menu () {
   done
   echo "$indent{% assign genus = site.pages | where:'genus','$1' | group_by:'species' | sort:'name' %}" >> "$2"
   echo "$indent{%- for species in genus -%}" >> "$2"
-  echo "$indent  {% include menu/section.html title=species.name border="-1" taxon=species.name %}" >> "$2"
+  echo "$indent  {% include menu/section.html title=species.name border="1" taxon=species.name %}" >> "$2"
   echo "$indent  {% assign speciesByID = species.items | sort:'ID' %}" >> "$2"
   echo "$indent  {%- for individual in speciesByID -%}" >> "$2"
   echo "$indent  <li><a href=\"/caterpillars{{ individual.url }}\">{{ individual.ID }}</a></li>" >> "$2"
@@ -40,7 +40,7 @@ echo "    <ul>" >> "$out_file"
 
 
 prev_depth=-1
-border=6
+border=8
 END_SECTION="    {%include menu/section-end.html %}";
 
 # Process the taxonomy file one line at a time

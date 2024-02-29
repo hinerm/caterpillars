@@ -3,14 +3,14 @@
     <h3>Taxonomy</h3>
     <ul>
     {% include menu/section.html title="Insecta" open="True" %}
-      {% include menu/section.html title="Lepidoptera" border="5" taxon="Lepidoptera" %}
-        {% include menu/section.html title="Noctuoidea" border="4" taxon="Noctuoidea" %}
-          {% include menu/section.html title="Erebinae" border="3" taxon="Erebinae" %}
-            {% include menu/section.html title="Catocalini" border="2" taxon="Catocalini" %}
-              {% include menu/section.html title="Euclystis" border="1" taxon="Euclystis" %}
+      {% include menu/section.html title="Lepidoptera" border="7" taxon="Lepidoptera" %}
+        {% include menu/section.html title="Noctuoidea" border="6" taxon="Noctuoidea" %}
+          {% include menu/section.html title="Erebinae" border="5" taxon="Erebinae" %}
+            {% include menu/section.html title="Catocalini" border="4" taxon="Catocalini" %}
+              {% include menu/section.html title="Euclystis" border="3" taxon="Euclystis" %}
                 {% assign genus = site.pages | where:'genus','Euclystis' | group_by:'species' | sort:'name' %}
                 {%- for species in genus -%}
-                  {% include menu/section.html title=species.name border=-1 taxon=species.name %}
+                  {% include menu/section.html title=species.name border=1 taxon=species.name %}
                   {% assign speciesByID = species.items | sort:'ID' %}
                   {%- for individual in speciesByID -%}
                   <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
@@ -18,12 +18,12 @@
                   {% include menu/section-end.html %}
                 {%- endfor -%}
         {%include menu/section-end.html %}
-        {% include menu/section.html title="Hesperioidea" border="1" taxon="Hesperioidea" %}
-          {% include menu/section.html title="Hesperiidae" border="0" taxon="Hesperiidae" %}
-            {% include menu/section.html title="Telemiades" border="-1" taxon="Telemiades" %}
+        {% include menu/section.html title="Hesperioidea" border="3" taxon="Hesperioidea" %}
+          {% include menu/section.html title="Hesperiidae" border="2" taxon="Hesperiidae" %}
+            {% include menu/section.html title="Telemiades" border="1" taxon="Telemiades" %}
               {% assign genus = site.pages | where:'genus','Telemiades' | group_by:'species' | sort:'name' %}
               {%- for species in genus -%}
-                {% include menu/section.html title=species.name border=-1 taxon=species.name %}
+                {% include menu/section.html title=species.name border=1 taxon=species.name %}
                 {% assign speciesByID = species.items | sort:'ID' %}
                 {%- for individual in speciesByID -%}
                 <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
@@ -31,10 +31,10 @@
                 {% include menu/section-end.html %}
               {%- endfor -%}
             {%include menu/section-end.html %}
-            {% include menu/section.html title="Entheus" border="-1" taxon="Entheus" %}
+            {% include menu/section.html title="Entheus" border="1" taxon="Entheus" %}
               {% assign genus = site.pages | where:'genus','Entheus' | group_by:'species' | sort:'name' %}
               {%- for species in genus -%}
-                {% include menu/section.html title=species.name border=-1 taxon=species.name %}
+                {% include menu/section.html title=species.name border=1 taxon=species.name %}
                 {% assign speciesByID = species.items | sort:'ID' %}
                 {%- for individual in speciesByID -%}
                 <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
