@@ -8,32 +8,39 @@
           {% include menu/section.html title="Erebinae" border="3" taxon="Erebinae" %}
             {% include menu/section.html title="Catocalini" border="2" taxon="Catocalini" %}
               {% include menu/section.html title="Euclystis" border="1" taxon="Euclystis" %}
-                {% assign genus = site.pages | where:'genus','Euclystis' %}
-                {%- for page in genus -%}
-                <li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+                {% assign genus = site.pages | where:'genus','Euclystis' | group_by:'species' | sort:'name' %}
+                {%- for species in genus -%}
+                  {% include menu/section.html title=species.name border=-1 taxon=species.name %}
+                  {% assign speciesByID = species.items | sort:'ID' %}
+                  {%- for individual in speciesByID -%}
+                  <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
+                  {%- endfor -%}
+                  {% include menu/section-end.html %}
                 {%- endfor -%}
-              {%include menu/section-end.html %}
-            {%include menu/section-end.html %}
-          {%include menu/section-end.html %}
         {%include menu/section-end.html %}
-        {% include menu/section.html title="Hesperioidea" border="4" taxon="Hesperioidea" %}
-          {% include menu/section.html title="Hesperiidae" border="3" taxon="Hesperiidae" %}
-            {% include menu/section.html title="Telemiades" border="2" taxon="Telemiades" %}
-              {% assign genus = site.pages | where:'genus','Telemiades' %}
-              {%- for page in genus -%}
-              <li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+        {% include menu/section.html title="Hesperioidea" border="1" taxon="Hesperioidea" %}
+          {% include menu/section.html title="Hesperiidae" border="0" taxon="Hesperiidae" %}
+            {% include menu/section.html title="Telemiades" border="-1" taxon="Telemiades" %}
+              {% assign genus = site.pages | where:'genus','Telemiades' | group_by:'species' | sort:'name' %}
+              {%- for species in genus -%}
+                {% include menu/section.html title=species.name border=-1 taxon=species.name %}
+                {% assign speciesByID = species.items | sort:'ID' %}
+                {%- for individual in speciesByID -%}
+                <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
+                {%- endfor -%}
+                {% include menu/section-end.html %}
               {%- endfor -%}
             {%include menu/section-end.html %}
-            {% include menu/section.html title="Entheus" border="2" taxon="Entheus" %}
-              {% assign genus = site.pages | where:'genus','Entheus' %}
-              {%- for page in genus -%}
-              <li><a href="/caterpillars{{ page.url }}">{{ page.title }}</a></li>
+            {% include menu/section.html title="Entheus" border="-1" taxon="Entheus" %}
+              {% assign genus = site.pages | where:'genus','Entheus' | group_by:'species' | sort:'name' %}
+              {%- for species in genus -%}
+                {% include menu/section.html title=species.name border=-1 taxon=species.name %}
+                {% assign speciesByID = species.items | sort:'ID' %}
+                {%- for individual in speciesByID -%}
+                <li><a href="/caterpillars{{ individual.url }}">{{ individual.ID }}</a></li>
+                {%- endfor -%}
+                {% include menu/section-end.html %}
               {%- endfor -%}
-            {%include menu/section-end.html %}
-          {%include menu/section-end.html %}
-        {%include menu/section-end.html %}
-      {%include menu/section-end.html %}
-    {%include menu/section-end.html %}
     </ul>
   </div>
 {%- endcapture -%}

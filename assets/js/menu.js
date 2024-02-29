@@ -15,11 +15,12 @@ function openAllMenuFromLeaf(id) {
   }
 }
 
-// Helper method entry point to find the Genus of the current page
-// - which is used as the ID to open the menu structure
+// Helper method entry point to find the appropriate taxon of
+// the current page - which is used as the ID to open the
+// menu structure
 function openMenuHierarchy() {
   var title = document.title;
-  var taxon = title.split(/(\s+)/)[0];
+  var taxon = title.split('-')[0].trim();
   openAllMenuFromLeaf(taxon);
 }
 

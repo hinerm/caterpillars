@@ -1,7 +1,9 @@
 ---
 layout: species
 genus: "Telemiades"
-title: "Telemiades nr. antiope"
+ID: "HES30"
+species: "Telemiades nr. antiope"
+title: "Telemiades nr. antiope - HES30"
 categories: jekyll species
 ---
 

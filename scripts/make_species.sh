@@ -27,7 +27,7 @@ for dir in "$1"/* ; do
   plant=$(echo "$row" | cut -d"," -f3)
 
   # Determine the filename
-  filename=$(echo "${species// /-}")
+  filename=$(echo "${ID// /-}")
   filename=$(echo "${filename//./}")
   filename=$(echo "$filename" | tr '[:upper:]' '[:lower:]')
   filename+=".md"
@@ -37,7 +37,9 @@ for dir in "$1"/* ; do
   echo "layout: species" >> "$out_dir/$filename"
 #  taxonomy: "Entheus:Hesperiidae:Hesperioidea:Lepidoptera:Insecta"
   echo "genus: \"$genus\"" >> "$out_dir/$filename"
-  echo "title: \"$species\"" >> "$out_dir/$filename"
+  echo "ID: \"$ID\"" >> "$out_dir/$filename"
+  echo "species: \"$species\"" >> "$out_dir/$filename"
+  echo "title: \"$species - $ID\"" >> "$out_dir/$filename"
   echo "categories: jekyll species" >> "$out_dir/$filename"
   echo "---" >> "$out_dir/$filename"
   echo "" >> "$out_dir/$filename"

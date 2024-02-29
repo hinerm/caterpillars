@@ -1,7 +1,9 @@
 ---
 layout: species
 genus: "Entheus"
-title: "Entheus matho"
+ID: "HES9"
+species: "Entheus matho"
+title: "Entheus matho - HES9"
 categories: jekyll species
 ---
 

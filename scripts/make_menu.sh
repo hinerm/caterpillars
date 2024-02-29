@@ -17,9 +17,14 @@ print_genus_menu () {
   do
     indent="  $indent"
   done
-  echo "$indent{% assign genus = site.pages | where:'genus','$1' %}" >> "$2"
-  echo "$indent{%- for page in genus -%}" >> "$2"
-  echo "$indent<li><a href=\"/caterpillars{{ page.url }}\">{{ page.title }}</a></li>" >> "$2"
+  echo "$indent{% assign genus = site.pages | where:'genus','$1' | group_by:'species' | sort:'name' %}" >> "$2"
+  echo "$indent{%- for species in genus -%}" >> "$2"
+  echo "$indent  {% include menu/section.html title=species.name border="-1" taxon=species.name %}" >> "$2"
+  echo "$indent  {% assign speciesByID = species.items | sort:'ID' %}" >> "$2"
+  echo "$indent  {%- for individual in speciesByID -%}" >> "$2"
+  echo "$indent  <li><a href=\"/caterpillars{{ individual.url }}\">{{ individual.ID }}</a></li>" >> "$2"
+  echo "$indent  {%- endfor -%}" >> "$2"
+  echo "$indent  {% include menu/section-end.html %}" >> "$2"
   echo "$indent{%- endfor -%}" >> "$2"
 }
 
